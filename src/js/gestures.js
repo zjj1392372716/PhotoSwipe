@@ -313,7 +313,8 @@ var _gestureStartTime,
 		}
 
 		if(_preventDefaultEventBehaviour(e, true)) {
-			e.preventDefault();
+			// FIXME: Solve the problem that pressing save pictures on the mobile terminal is invalid
+			// e.preventDefault();
 		}
 
 

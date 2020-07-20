@@ -115,7 +115,8 @@
 	-moz-user-select: none;
 	user-select: none;
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
-	-webkit-touch-callout: none;
+	/* FIXME: 解决 Safari 浏览器长按 */
+	-webkit-touch-callout: default;
 }
 
 .pswp__zoom-wrap {
