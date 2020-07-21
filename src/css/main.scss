@@ -209,3 +209,99 @@
 	color: $pswp__error-text-color;
 	text-decoration: underline;
 }
+
+// FIX: 自定义 loading 样式
+.pswp__loading-outer {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  background-color: rgba(0, 0,0, 0.5);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.pswp__loading-inner {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  margin-bottom: 10px;
+}
+.pswp__loading-inner div:first-child {
+  opacity: 1;
+  animation-delay: 0.1s;
+  transform: rotate(0deg) translateY(-6px);
+}
+.pswp__loading-inner div:nth-child(2) {
+  opacity: 0.9;
+  animation-delay: 0.2s;
+  transform: rotate(36deg) translateY(-6px);
+}
+.pswp__loading-inner div:nth-child(3) {
+  opacity: 0.8;
+  animation-delay: 0.3s;
+  transform: rotate(72deg) translateY(-6px);
+}
+.pswp__loading-inner div:nth-child(4) {
+  opacity: 0.7;
+  animation-delay: 0.4s;
+  transform: rotate(108deg) translateY(-6px);
+}
+.pswp__loading-inner div:nth-child(5) {
+  opacity: 0.6;
+  animation-delay: 0.5s;
+  transform: rotate(144deg) translateY(-6px);
+}
+.pswp__loading-inner div:nth-child(6) {
+  opacity: 0.5;
+  animation-delay: 0.6s;
+  transform: rotate(180deg) translateY(-6px);
+}
+.pswp__loading-inner div:nth-child(7) {
+  opacity: 0.4;
+  animation-delay: 0.7s;
+  transform: rotate(216deg) translateY(-6px);
+}
+.pswp__loading-inner div:nth-child(8) {
+  opacity: 0.3;
+  animation-delay: 0.8s;
+  transform: rotate(252deg) translateY(-6px);
+}
+.pswp__loading-inner div:nth-child(9) {
+  opacity: 0.2;
+  animation-delay: 0.9s;
+  transform: rotate(288deg) translateY(-6px);
+}
+.pswp__loading-inner div:nth-child(10) {
+  opacity: 0.1;
+  animation-delay: 1s;
+  transform: rotate(324deg) translateY(-6px);
+}
+.pswp__loading-inner div {
+  border-radius: 1px;
+  width: 2px;
+  height: 4px;
+  animation: dd-spinner 1s linear infinite;
+  position: absolute;
+  background: #fff;
+}
+
+@keyframes dd-spinner {
+  0% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

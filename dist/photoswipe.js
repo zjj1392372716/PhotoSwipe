@@ -1,4 +1,4 @@
-/*! PhotoSwipe - v4.1.3 - 2020-07-20
+/*! PhotoSwipe - v4.1.3 - 2020-07-21
 * http://photoswipe.com
 * Copyright (c) 2020 Dmitry Semenov; */
 (function (root, factory) { 
@@ -3124,6 +3124,23 @@ _registerModule('Controller', {
 					}
 					
 					_setImageSize(item, placeholder);
+
+					// FIX: 自定义 loading 状态
+					var loadingContainerDiv = document.createElement('div');
+					loadingContainerDiv.className = 'pswp__loading-outer';
+					var loadingBox = document.createElement('div');
+					loadingBox.className = 'pswp__loading-inner'
+					var emptyDiv = document.createElement('div');
+					var _frag = document.createDocumentFragment();
+					for(var _i = 0; _i < 10; _i++) {
+						_frag.appendChild(emptyDiv.cloneNode(true))
+					}
+					loadingBox.appendChild(_frag)
+					var span = document.createElement('span');
+					span.innerText = '加载中';
+					loadingContainerDiv.appendChild(loadingBox);
+					loadingContainerDiv.appendChild(span)
+					if(placeholder)  placeholder.appendChild(loadingContainerDiv)
 
 					baseDiv.appendChild(placeholder);
 					item.placeholder = placeholder;
